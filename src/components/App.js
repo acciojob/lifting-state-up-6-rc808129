@@ -5,27 +5,16 @@ import TodoList from "./TodoList";
 const App = () => {
 
   const [todos, setTodos] = useState([
-    { flag: false, id: 1, item: "Learn React" },
-    { flag: false, id: 2, item: "Build a React app" },
-    { flag: false, id: 3, item: "Deploy the React app" }
+    { id: 1, item: "Learn React" },
+    { id: 2, item: "Build a React app" },
+    { id: 3, item: "Deploy the React app" }
   ]);
 
-  // function handleComplete(id) {
-  //   const updatedTodos = todos.map(todo =>
-  //     todo.id === id ? { ...todo, flag: true } : todo
-  //   );
+  const [completed, setCompleted] = useState(false);
 
-  //   setTodos(updatedTodos);
-  // }
-
-  function handleComplete(id) {
-  const updatedTodos = todos.map(todo =>
-    todo.id === id ? { ...todo, flag: true } : todo
-  );
-  setTodos(updatedTodos);
-}
-
-
+  function handleComplete() {
+    setCompleted(true);
+  }
 
   return (
     <div>
@@ -35,6 +24,7 @@ const App = () => {
       <TodoList
         todos={todos}
         handleComplete={handleComplete}
+        completed={completed}
       />
     </div>
   );
