@@ -12,7 +12,10 @@ const App = () => {
 
   const [completed, setCompleted] = useState(false);
 
-  function handleComplete() {
+  function handleComplete(id) {
+
+    const updatedTodos = todos.map(todo => todo.id === id ? { ...todo, flag: true } : todo ); setTodos(updatedTodos);
+
     setCompleted(true);
   }
 
