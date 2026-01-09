@@ -3,17 +3,17 @@ import TodoList from "./TodoList";
 
 const App = () => {
 
-  const [todos] = useState([
-    { id: 1, text: "Learn React" },
-    { id: 2, text: "Build a React app" },
-    { id: 3, text: "Deploy the React app" }
+  const [todos, setTodos] = useState([
+    { id: 1, text: "Learn React", completed: false },
+    { id: 2, text: "Build a React app", completed: false },
+    { id: 3, text: "Deploy the React app", completed: false }
   ]);
 
-  // 🔑 step 1: initially false (button visible)
-  const [completed, setCompleted] = useState(false);
-
-  function handleComplete() {
-    setCompleted(true);   // 🔑 step 2: click ke baad hide
+  function handleComplete(id) {
+    const updatedTodos = todos.map(todo =>
+      todo.id === id ? { ...todo, completed: true } : todo
+    );
+    setTodos(updatedTodos);
   }
 
   return (
@@ -22,7 +22,6 @@ const App = () => {
 
       <TodoList
         todos={todos}
-        completed={completed}
         handleComplete={handleComplete}
       />
     </div>

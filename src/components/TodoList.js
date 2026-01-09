@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoList = ({ todos, completed, handleComplete }) => {
+const TodoList = ({ todos, handleComplete }) => {
   return (
     <div>
       {todos.map(todo => (
@@ -8,9 +8,9 @@ const TodoList = ({ todos, completed, handleComplete }) => {
           <li>
             {todo.text}
 
-            {/* ✅ initially render, click ke baad remove */}
-            {!completed && (
-              <button onClick={handleComplete}>
+            {/* 👇 THIS IS THE KEY LINE */}
+            {!todo.completed && (
+              <button onClick={() => handleComplete(todo.id)}>
                 Complete
               </button>
             )}
