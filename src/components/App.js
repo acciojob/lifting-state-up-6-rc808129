@@ -10,13 +10,23 @@ const App = () => {
     { flag: false, id: 3, item: "Deploy the React app" }
   ]);
 
-  function handleComplete(id) {
-    const updatedTodos = todos.map(todo =>
-      todo.id === id ? { ...todo, flag: true } : todo
-    );
+  // function handleComplete(id) {
+  //   const updatedTodos = todos.map(todo =>
+  //     todo.id === id ? { ...todo, flag: true } : todo
+  //   );
 
-    setTodos(updatedTodos);
-  }
+  //   setTodos(updatedTodos);
+  // }
+
+  function handleComplete(id) {
+  const updatedTodos = todos.map(todo => ({
+    ...todo,
+    flag: true
+  }));
+
+  setTodos(updatedTodos);
+}
+
 
   return (
     <div>
