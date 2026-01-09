@@ -9,10 +9,12 @@ const App = () => {
     { id: 3, text: "Deploy the React app", completed: false }
   ]);
 
-  function handleComplete(id) {
-    const updatedTodos = todos.map(todo =>
-      todo.id === id ? { ...todo, completed: true } : todo
-    );
+  // 🔑 click par ALL todos completed
+  function handleComplete() {
+    const updatedTodos = todos.map(todo => ({
+      ...todo,
+      completed: true
+    }));
     setTodos(updatedTodos);
   }
 

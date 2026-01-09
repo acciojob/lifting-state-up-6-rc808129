@@ -8,9 +8,9 @@ const TodoList = ({ todos, handleComplete }) => {
           <li>
             {todo.text}
 
-            {/* 👇 THIS IS THE KEY LINE */}
+            {/* initially button, click ke baad DOM se remove */}
             {!todo.completed && (
-              <button onClick={() => handleComplete(todo.id)}>
+              <button onClick={handleComplete}>
                 Complete
               </button>
             )}
