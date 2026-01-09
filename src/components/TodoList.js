@@ -15,6 +15,7 @@ const TodoList = ({ todos, handleComplete }) => {
             )}
           </li>
         </ul>
+        
       ))}
     </div>
   );
