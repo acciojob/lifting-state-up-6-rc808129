@@ -9,11 +9,11 @@ const App = () => {
     { id: 3, text: "Deploy the React app" }
   ]);
 
-  // ✅ global completion flag
+  // 🔑 step 1: initially false (button visible)
   const [completed, setCompleted] = useState(false);
 
   function handleComplete() {
-    setCompleted(true);
+    setCompleted(true);   // 🔑 step 2: click ke baad hide
   }
 
   return (

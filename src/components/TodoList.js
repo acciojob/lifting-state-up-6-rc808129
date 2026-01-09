@@ -8,7 +8,7 @@ const TodoList = ({ todos, completed, handleComplete }) => {
           <li>
             {todo.text}
 
-            {/* ✅ button DOM se completely remove */}
+            {/* ✅ initially render, click ke baad remove */}
             {!completed && (
               <button onClick={handleComplete}>
                 Complete
