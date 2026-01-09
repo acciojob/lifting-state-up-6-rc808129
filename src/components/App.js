@@ -8,9 +8,13 @@ const App = () => {
     { id: 3, text: "Deploy the React app", completed: false }
   ]);
 
-  // 🔑 click par ALL todos complete
+  // ❗ click par sab todos completed
   function handleComplete() {
-    setTodos(todos.map(todo => ({ ...todo, completed: true })));
+    const updatedTodos = todos.map(todo => ({
+      ...todo,
+      completed: true
+    }));
+    setTodos(updatedTodos);
   }
 
   return (

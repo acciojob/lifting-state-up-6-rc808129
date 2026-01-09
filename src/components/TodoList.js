@@ -8,7 +8,7 @@ const TodoList = ({ todos, handleComplete }) => {
           <li>
             {todo.text}
 
-            {/* ✅ initial render me button aayega */}
+            {/* 🔑 KEY: initial render me button aana hi chahiye */}
             {!todo.completed && (
               <button onClick={handleComplete}>
                 Complete
