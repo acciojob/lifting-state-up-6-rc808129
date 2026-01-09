@@ -3,19 +3,17 @@ import TodoList from "./TodoList";
 
 const App = () => {
 
-  // ✅ Parent state
-  const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a React app", completed: false },
-    { id: 3, text: "Deploy the React app", completed: false }
+  const [todos] = useState([
+    { id: 1, text: "Learn React" },
+    { id: 2, text: "Build a React app" },
+    { id: 3, text: "Deploy the React app" }
   ]);
 
-  // ✅ Function to update state (LIFTED UP)
-  function handleComplete(id) {
-    const updatedTodos = todos.map(todo =>
-      todo.id === id ? { ...todo, completed: true } : todo
-    );
-    setTodos(updatedTodos);
+  // ✅ global completion flag
+  const [completed, setCompleted] = useState(false);
+
+  function handleComplete() {
+    setCompleted(true);
   }
 
   return (
@@ -24,6 +22,7 @@ const App = () => {
 
       <TodoList
         todos={todos}
+        completed={completed}
         handleComplete={handleComplete}
       />
     </div>

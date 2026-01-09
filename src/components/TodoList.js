@@ -1,18 +1,16 @@
 import React from "react";
 
-const TodoList = ({ todos, handleComplete }) => {
+const TodoList = ({ todos, completed, handleComplete }) => {
   return (
     <div>
-      <h2>Child Component</h2>
-
       {todos.map(todo => (
         <ul key={todo.id}>
           <li>
             {todo.text}
 
-            {/* ✅ Button sirf incomplete todo ke liye */}
-            {!todo.completed && (
-              <button onClick={() => handleComplete(todo.id)}>
+            {/* ✅ button DOM se completely remove */}
+            {!completed && (
+              <button onClick={handleComplete}>
                 Complete
               </button>
             )}
